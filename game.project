@@ -7,3 +7,13 @@ shared_state = 1
 [library]
 include_dirs = defwarez-shared
 
+[display]
+width = 720
+height = 1280
+
+[bootstrap]
+main_collection = /main.collectionc
+
+[input]
+game_binding = /defwarez-shared/input.input_bindingc
+

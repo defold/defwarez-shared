@@ -1,0 +1,9 @@
+.DS_Store
+.lock-wscript
+/build
+builtins
+.internal
+
+log.txt
+.buildpath
+
