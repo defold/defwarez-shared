@@ -1,2 +1,14 @@
 go.property("game_name", hash("<YOUR GAME NAME>"))
 go.property("game_authors", hash("<LIST CONTRIBUTORS>"))
+
+function init(self)
+	-- TODO only load mock if not in real client
+
+	msg.post("#mockproxy", "load")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "enable")
+	end
+end
