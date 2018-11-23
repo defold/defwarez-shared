@@ -1,0 +1,26 @@
+function init(self)
+	msg.post("#mock_gui", "disable")
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+local function start_game(self)
+	msg.post(self.sender, "defwarez_game_start")
+	msg.post("#mock_gui", "disable")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("mock_settings") then
+		self.sender = sender
+		if not message.autorun then
+			msg.post("#mock_gui", "enable")
+		else
+			start_game(self)
+		end
+	elseif message_id == hash("mock_start_game") then
+		start_game(self)
+	end
+end

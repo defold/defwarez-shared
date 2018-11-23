@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "mockproxy"
   type: "collectionproxy"
-  data: "collection: \"/defwarez-shared/mock.collection\"\n"
+  data: "collection: \"/defwarez-shared/mocking/mock.collection\"\n"
   "exclude: false\n"
   ""
   position {

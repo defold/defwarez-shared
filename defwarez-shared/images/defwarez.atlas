@@ -1,0 +1,30 @@
+images {
+  image: "/defwarez-shared/images/bg-sun.png"
+}
+images {
+  image: "/defwarez-shared/images/bg-grad.png"
+}
+images {
+  image: "/defwarez-shared/images/board.png"
+}
+images {
+  image: "/defwarez-shared/images/btn-back.png"
+}
+images {
+  image: "/defwarez-shared/images/btn-main.png"
+}
+images {
+  image: "/defwarez-shared/images/defwarez-logo.png"
+}
+images {
+  image: "/defwarez-shared/images/defwarez-logo-mask.png"
+}
+images {
+  image: "/defwarez-shared/images/timer-back.png"
+}
+images {
+  image: "/defwarez-shared/images/timer-color.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

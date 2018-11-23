@@ -1,14 +1,18 @@
 go.property("game_name", hash("<YOUR GAME NAME>"))
 go.property("game_authors", hash("<LIST CONTRIBUTORS>"))
+go.property("game_main_script", msg.url("/main#script"))
+go.property("debug_autorun_game", true)
 
 function init(self)
 	-- TODO only load mock if not in real client
-
 	msg.post("#mockproxy", "load")
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("proxy_loaded") then
 		msg.post(sender, "enable")
+		msg.post("mock:/mock", "mock_settings", {autorun = self.debug_autorun_game})
+	elseif message_id == hash("defwarez_game_start") then
+		msg.post(self.game_main_script, "defwarez_game_start")
 	end
 end
