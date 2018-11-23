@@ -1,0 +1,1 @@
+go.property("game_name", hash(""))
