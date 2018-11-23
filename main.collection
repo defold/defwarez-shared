@@ -1,7 +1,7 @@
 name: "default"
 instances {
-  id: "game"
-  prototype: "/defwarez-shared/game.go"
+  id: "DEFWAREZ"
+  prototype: "/defwarez-shared/DEFWAREZ.go"
   position {
     x: 0.0
     y: 0.0

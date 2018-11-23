@@ -1,6 +1,6 @@
 components {
-  id: "game-settings"
-  component: "/defwarez-shared/game-settings.script"
+  id: "SETTINGS"
+  component: "/defwarez-shared/settings.script"
   position {
     x: 0.0
     y: 0.0
