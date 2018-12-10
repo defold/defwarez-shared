@@ -22,6 +22,14 @@ M.set_score = function(abs_score)
 
 end
 
+M.player_done = function()
+    if is_live then
+        msg.post("main:/main", "player_done")
+    else
+        print("Player done!")
+    end
+end
+
 M.get_players = function()
 
     -- TODO
