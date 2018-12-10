@@ -25,6 +25,30 @@ images {
 images {
   image: "/defwarez-shared/images/timer-color.png"
 }
+images {
+  image: "/defwarez-shared/images/flag.png"
+}
+images {
+  image: "/defwarez-shared/images/player-track.png"
+}
+images {
+  image: "/defwarez-shared/images/player-large-back.png"
+}
+images {
+  image: "/defwarez-shared/images/player-large-front.png"
+}
+images {
+  image: "/defwarez-shared/images/player-large-solid.png"
+}
+images {
+  image: "/defwarez-shared/images/player-small-back.png"
+}
+images {
+  image: "/defwarez-shared/images/player-small-front.png"
+}
+images {
+  image: "/defwarez-shared/images/player-small-solid.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
