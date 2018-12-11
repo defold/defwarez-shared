@@ -46,7 +46,7 @@ end
 
 M.set_player_udata = function(data)
     if is_live then
-
+        msg.post("main:/main", "set_userdata", data )
     else
         msg.post("mock:/mock#mock", "set_userdata", data)
     end
