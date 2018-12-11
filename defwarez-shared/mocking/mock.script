@@ -12,9 +12,9 @@
 ]]
 local mock_state = {
 	owner = 1,
-	score = {0},
+	score = {0, 300},
 	max_score = 0,
-	players = { 1 },
+	players = { 1, 2 },
 	udata = {}
 }
 local mock_player_id = 1
@@ -24,7 +24,10 @@ local state_timer_reset = 0.4
 function init(self)
 	msg.post("#mock_gui", "disable")
 	self.state_timer = state_timer_reset
-	msg.post("game:/main", "player_id", {id = mock_player_id})
+	local is_live = sys.get_config("defwarez.live", "0") == "1"
+	if not is_live then
+		msg.post("game:/main", "player_id", {id = mock_player_id})
+	end
 end
 
 function update(self, dt)
