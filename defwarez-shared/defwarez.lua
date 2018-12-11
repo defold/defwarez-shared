@@ -2,6 +2,16 @@ local M = {}
 
 local is_live = sys.get_config("defwarez.live", "0") == "1"
 
+M.current_render_update = nil
+M.set_render_update_func = function(func)
+    M.current_render_update = func
+end
+
+M.current_render_init = nil
+M.set_render_init_func = function(func)
+    M.current_render_init = func
+end
+
 M.add_score = function(score)
 
     if is_live then

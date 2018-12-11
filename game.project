@@ -13,6 +13,7 @@ height = 1280
 
 [bootstrap]
 main_collection = /main.collectionc
+render = /defwarez-shared/defwarez.renderc
 
 [input]
 game_binding = /defwarez-shared/input.input_bindingc
