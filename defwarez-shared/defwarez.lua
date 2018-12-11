@@ -18,6 +18,7 @@ M.add_score = function(score)
         msg.post("main:/main", "add_score", { score = score } )
     else
         --print("add score: " .. tostring(score))
+        msg.post("mock:/mock#mock", "add_score", { score = score })
         msg.post("mock:/mock#game", "add_score", { score = score })
     end
     
@@ -29,6 +30,7 @@ M.set_score = function(abs_score)
         msg.post("main:/main", "set_score", { score = abs_score } )
     else
         --print("set score: " .. tostring(abs_score))
+        msg.post("mock:/mock#mock", "set_score", { score = abs_score })
         msg.post("mock:/mock#game", "set_score", { score = abs_score })
     end
 
@@ -39,6 +41,14 @@ M.player_done = function()
         msg.post("main:/main", "player_done")
     else
         print("Player done!")
+    end
+end
+
+M.set_player_udata = function(data)
+    if is_live then
+
+    else
+        msg.post("mock:/mock#mock", "set_userdata", data)
     end
 end
 

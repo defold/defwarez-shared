@@ -1,10 +1,38 @@
+--[[
+{
+	owner = 1,
+	scores = {
+		1 = 0
+	},
+	max_score = 0,
+	players = {
+		1 = 1
+	}
+}
+]]
+local mock_state = {
+	owner = 1,
+	score = {0},
+	max_score = 0,
+	players = { 1 },
+	udata = {}
+}
+local mock_player_id = 1
+
+local state_timer_reset = 0.4
+
 function init(self)
 	msg.post("#mock_gui", "disable")
+	self.state_timer = state_timer_reset
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+	self.state_timer = self.state_timer - dt
+	if self.state_timer <= 0 then
+		self.state_timer = state_timer_reset
+
+		msg.post("game:/main", "game_state", mock_state)
+	end
 end
 
 local function start_game(self)
@@ -22,5 +50,11 @@ function on_message(self, message_id, message, sender)
 		end
 	elseif message_id == hash("mock_start_game") then
 		start_game(self)
+	elseif message_id == hash("add_score") then
+		mock_state.score[1] = mock_state.score[1] + message.score
+	elseif message_id == hash("set_score") then
+		mock_state.score[1] = message.score
+	elseif message_id == hash("set_userdata") then
+		mock_state.udata[1] = message
 	end
 end

@@ -1,4 +1,4 @@
-name: "default"
+name: "game"
 instances {
   id: "DEFWAREZ"
   prototype: "/defwarez-shared/DEFWAREZ.go"
