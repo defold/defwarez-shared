@@ -1,0 +1,34 @@
+-- TODO get the timelimit from game-info.lua
+local time_limit = 20
+local max_score = 1000
+
+function init(self)
+	self.time = time_limit
+	self.score = 0
+end
+
+local function update_score(self)
+	local d = self.score / max_score
+	d = math.min(1, d)
+	local n = gui.get_node("player_template/shadow")
+	local p = gui.get_position(n)
+	p.x = -309 + d * 618
+	gui.set_position(n, p)
+end
+
+function update(self, dt)
+	self.time = self.time - dt
+
+	local d = self.time / time_limit
+	gui.set_fill_angle(gui.get_node("timer"), d * 360)
+
+	update_score(self)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("add_score") then
+		self.score = self.score + message.score
+	elseif message_id == hash("set_score") then
+		self.score = message.score
+	end
+end

@@ -1,4 +1,4 @@
-script: ""
+script: "/defwarez-shared/game-mock.gui_script"
 fonts {
   name: "warez"
   font: "/defwarez-shared/fonts/warez.font"

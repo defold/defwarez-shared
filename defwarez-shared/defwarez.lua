@@ -7,7 +7,8 @@ M.add_score = function(score)
     if is_live then
         msg.post("main:/main", "add_score", { score = score } )
     else
-        print("add score: " .. tostring(score))
+        --print("add score: " .. tostring(score))
+        msg.post("mock:/mock#game", "add_score", { score = score })
     end
     
 end
@@ -17,7 +18,8 @@ M.set_score = function(abs_score)
     if is_live then
         msg.post("main:/main", "set_score", { score = abs_score } )
     else
-        print("set score: " .. tostring(abs_score))
+        --print("set score: " .. tostring(abs_score))
+        msg.post("mock:/mock#game", "set_score", { score = abs_score })
     end
 
 end
