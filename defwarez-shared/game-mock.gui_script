@@ -20,6 +20,7 @@ function update(self, dt)
 	self.time = self.time - dt
 
 	local d = self.time / time_limit
+	d = math.max(0, math.min(1, d))
 	gui.set_fill_angle(gui.get_node("timer"), d * 360)
 
 	update_score(self)
