@@ -28,7 +28,7 @@ function init(self)
     --
     -- projection that centers and fits content with maintained aspect ratio
     --
-    function self.stretch_projection(near, far)
+    function self.fixed_fit_projection(near, far)
         local width = render.get_width()
         local height = render.get_height()
         local window_width = render.get_window_width()
